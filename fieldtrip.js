@@ -10,6 +10,7 @@
             return;
         }
         window.parent.postMessage({ id: e.target.id }, '*');
+        console.info("posting message ", e.target.id);
     }
 
     function ftSendAllClickables() {
