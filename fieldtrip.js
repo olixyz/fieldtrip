@@ -4,6 +4,8 @@
     * Load above closing </body> tag
     */
     const ftHandleClicks = (e) => {
+        e.stopProagation();
+        e.preventDefault();
         if (!e.target.id.startsWith('ft__')) {
             return;
         }
