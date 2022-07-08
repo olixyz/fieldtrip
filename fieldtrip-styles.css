@@ -1,0 +1,9 @@
+[id^=ft__] {
+    cursor: pointer
+}
+
+.ft__highlight {
+    border-color: rgb(244, 114, 182);
+    border-width: 1px;
+    border-style: dashed;
+}
