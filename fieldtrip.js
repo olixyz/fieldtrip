@@ -1,6 +1,6 @@
 "use strict";
 (function () {
-    const ftHandleClicks = (e) => {
+	const ftHandleClicks = (e) => {
 		e.stopPropagation();
 		e.preventDefault();
 		if (!e.target.id.startsWith('ft__')) {
@@ -27,13 +27,13 @@
 		const ftAll = document.querySelectorAll('[id^="ft__"]');
 		const popoverNodes = document.querySelectorAll('[id^="popover__ft__"]');
 		const tooltipNodes = document.querySelectorAll('[id^="tooltip__ft__"]');
-		switch (e.data.type) {
+		switch (e.data?.type) {
 			case 'highlight':
 				for (let ele of popoverNodes) {
 					ele.remove();
 				}
 				// Add styles to highlight anchors
-				if (e.data.highlight) {
+				if (e.data?.highlight) {
 					// Add popper tooltip
 					for (let ele of ftAll) {
 						ele.classList.add('ft__highlight');
@@ -58,10 +58,11 @@
 				break;
 			case 'scrollTo':
 				const element = document.getElementById(e.data.anchorName);
-				const elTooltip = document.getElementById(`tooltip__${element.id}`);
 				if (!element) {
+					console.info("Element not found")
 					break;
 				}
+				const elTooltip = document.getElementById(`tooltip__${element.id}`);
 				element.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
 				for (let ele of ftAll) {
 					ele.classList.remove('ft__scrollTo');
@@ -83,14 +84,14 @@
 		// Highlight All
 	};
 
-    document.body.addEventListener('click', ftHandleClicks, false);
-    window.addEventListener('message', ftHandleMessages, false);
-    ftSendAllClickables();
+	document.body.addEventListener('click', ftHandleClicks, false);
+	window.addEventListener('message', ftHandleMessages, false);
+	ftSendAllClickables();
 
-    window.onunload = function () {
-        document.body.removeEventListener('click', ftHandleClicks);
-        window.removeEventListener('message', ftHandleMessages);
-        return;
-    };
+	window.onunload = function () {
+		document.body.removeEventListener('click', ftHandleClicks);
+		window.removeEventListener('message', ftHandleMessages);
+		return;
+	};
 
 }());
