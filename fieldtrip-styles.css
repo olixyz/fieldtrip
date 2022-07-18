@@ -1,9 +1,38 @@
-[id^=ft__] {
-    cursor: pointer
+[id^='ft__'] {
+    cursor: pointer;
 }
 
 .ft__highlight {
     border-color: rgb(244, 114, 182);
     border-width: 1px;
     border-style: dashed;
+}
+.ft__scrollTo {
+    border-width: 2px;
+    border-style: solid;
+}
+.ft__popover {
+    position: relative;
+    display: inline;
+}
+
+.ft__popoverTooltip {
+    position: absolute;
+    padding: 0.5rem;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+}
+
+.ft__tooltip__highlight {
+    border-color: rgb(244, 114, 182);
+    border-width: 2px;
+    border-style: solid;
 }
