@@ -27,6 +27,7 @@
     font-size: 1rem;
     font-weight: normal;
     font-style: normal;
+    white-space: nowrap;
     color: rgb(0, 0, 0);
     filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
 }
